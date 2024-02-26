@@ -62,28 +62,133 @@ console.log(users[0].password);
 
 // let x = +prompt('Please write number');
 // if (x !== 0){
-//     document.write("<h1>True!</h1>")
+//     document.write("<h1>Вірно!</h1>")
 // } else {
-//     console.log('False!')
+//     console.log('Невірно!')
 // }
 
 // - Дано змінну time яка рівна числу від 0 до 59. Потрібно написати код, який перевірить, до якої четверті години попадає число
 // (в першу, другу, третю или четверту частину години).
 
-let time = prompt()
+// let time = +prompt('What a quarter of an hour now?');
+// if (time >= 0 && time <= 14) {
+//     console.log('I');
+// } else if (time >= 15 && time <= 29) {
+//     console.log('II');
+// } else if (time >= 30 && time <= 44) {
+//     console.log('III');
+// } else if (time >= 45 && time <= 59) {
+//     console.log('IV');
+// } else {
+//     console.log('You are wrong there is no such part of time!');
+// }
 
 // - У змінній day дано якесь число від 1 до 31. Потрібно визначити, у яку половину(декаду) місяця потрапляє це число
 //   (у першу, другу чи третю).
+
+// let day = prompt ('What day of decade?');
+// if (day >= 1 && day <= 10) {
+//     console.log('I decade');
+// } else if (day >= 11 && day <= 20) {
+//     console.log('II decade');
+// } else if (day >= 21 && day <= 31) {
+//     console.log('III decade')
+// } else {
+//     console.error('We dont`t have that number in the decade of the month!');
+// }
+
 // - Скласти розклад на тиждень за домопоги switch. Користувач вводить порядковий номер дня тижня і на екрані відображається інфа
 //   що заплановано на цей день (можна замість плану на день, назву дня англійською).
+
+// let week = prompt('If you want to knowe your Timetable! Please write a number day!');
+
+// switch (week){
+//     case '1':
+//         console.log('Monday');
+//         document.write ("<div><span>Monday!</span></div><p>Lecture</p><li>Increments</li><li>For loop</li><li>For of</li><li>For in</li><li>While</li>");
+//         break;
+//     case '2':
+//         console.log('Tuesday');
+//         document.write ("<div><span>Tuesday!</span></div><p>Consultation</p>");
+//         break;
+//     case '3':
+//         console.log('Wednesday');
+//         document.write ("<div><span>Wednesday!</span></div><p>Lecture</p><li>Functions base</li><li>Return</li><li>Arguments</li><li>Rest arg_s</li>");
+//         break;
+//     case '4':
+//         console.log('Thursday');
+//         document.write ("<div><span>Thursday!</span></div><p>Consultation</p>");
+//         break;
+//     case '5':
+//         console.log('Friday');
+//         document.write ("<div><span>Friday!</span></div><p>Lecture</p><li>Fn expression</li><li>Arrow fn</li><li>Functions in objects</li><li>Recursion</li>");
+//         break;
+//     case '6':
+//         console.log ('Saturday');
+//         document.write ("<div><span>Saturday!</span></div><p>English lesson</p>");
+//         break;
+//     case '7':
+//         console.log ('Sunday');
+//         document.write ("<div><span>Sunday!</span></div><p>Holiday!!!</p>");
+//     default: 
+//         console.error('ANDEFINED');
+
+// };
+
 // - Користувач вводить або має два числа.
 //   Потрібно знайти та вивести максимальне число з тих двох .
 //   Також потрібно врахувати коли введені рівні числа.
-//
+
+// let y = +prompt('First number');
+// let a = +prompt('Second number');
+// if (y > a){
+//     console.log (y);
+// }else if (y < a){
+//     console.log(`${a}`);
+// }else if (y === a){
+//     console.log ('Same')
+// }
+
 // - є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно). Напишіть код який,
 //   за допомоги  оператора || буде присвоювати змінній х значення "default"  якщо значення змінної х являється falsy
 //   (хибноподібні, тобто приводиться до false)
-//
-//
+
+// let x1 = false;
+// if (!x1){
+//     x1 = 'default';
+//     console.log ('default')
+// }else {
+//     console.log ('true')
+// }
+
 // - з файлу arrays.js (лежить в папці 2023 plan ) взяти масив coursesAndDurationArray. За допомоги іф перевірити кожен його елемент
 //   на тривалість навчання. У випадку якщо тривалість довша за 5 місяців вивести в консоль "Супер".
+
+let coursesAndDurationArray = [
+    {title: 'JavaScript Complex', monthDuration: 5},
+    {title: 'Java Complex', monthDuration: 6},
+    {title: 'Python Complex', monthDuration: 6},
+    {title: 'QA Complex', monthDuration: 4},
+    {title: 'FullStack', monthDuration: 7},
+    {title: 'Frontend', monthDuration: 4}
+];
+
+console.log(coursesAndDurationArray.length);
+if (coursesAndDurationArray [0].monthDuration > 5){
+    console.log ('Cool!');
+}
+if (coursesAndDurationArray [1].monthDuration > 5){
+    console.log ('Cool!');
+}
+if (coursesAndDurationArray [2].monthDuration > 5){
+    console.log ('Cool!');
+}
+if (coursesAndDurationArray [3].monthDuration > 5){
+    console.log ('Cool!');
+}
+if (coursesAndDurationArray [4].monthDuration > 5){
+    console.log ('Cool!');
+}
+if (coursesAndDurationArray [5].monthDuration > 5){
+    console.log ('Cool!')
+}

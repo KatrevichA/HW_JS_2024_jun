@@ -82,6 +82,13 @@ let books = [
 //     `)
 // }
 
+document.write(`<ul> List Skills`);
+for (let listOfItem of listOfItems) {
+    document.write(`<li>${listOfItem}</li>`)
+}
+document.write(`</ul>`);
+
+// !!!!  ЯКЩО НЕ ВИНЕСТИ ДЛЯ КОЖНОГО ЕЛЕНЕНТА li БЕДЕ БУДУВАТИСЬ НОВИЙ ul !!!!
 
 // -----------------------------------------------
 

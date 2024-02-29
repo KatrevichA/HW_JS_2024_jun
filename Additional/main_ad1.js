@@ -1,19 +1,31 @@
-// --створити масив з:
-
-// - з 5 числових значень
-// - з 5 стічкових значень
-// - з 5 значень стрічкового, числового та булевого типу
-// - та вивести його в консоль
-
-// -- Створити пустий масив. Наповнити його будь-якими значеннями звертаючись до конкретного індексу.
-//    Вивести в консоль
+// // --створити масив з:
+// // - з 5 числових значень
+// let arrNumber = [33,44,555,999,1000];
+// // - з 5 стічкових значень
+// let arrString = ['name', 'age', 'list', 'string', 'time'];
+// // - з 5 значень стрічкового, числового та булевого типу
+// let arrMix = ['mix', 66, true, 'array', false];
+// // - та вивести його в консоль
+// console.log(arrNumber);
+// console.log(arrString);
+// console.log(arrMix);
+// // -- Створити пустий масив. Наповнити його будь-якими значеннями звертаючись до конкретного індексу.
+// let arr = [ 'Apple', { name: 'John' }, true, function() { alert('hello'); } ];
+// //    Вивести в консоль
+// console.log(arr.length);
+// console.log(arr[0]);
+// console.log(arr[1]);
+// console.log(arr[2]);
+// console.log(arr[3]);
 
 //
 //
 //
 //
 // - є масив [2,17,13,6,22,31,45,66,100,-18] :
-let array = [2,17,13,6,22,31,45,66,100,-18];
+
+// let array = [2,17,13,6,22,31,45,66,100,-18];
+
 //     1. перебрати його циклом while
 // let i = 0;
 // while (i < array.length){
@@ -21,12 +33,26 @@ let array = [2,17,13,6,22,31,45,66,100,-18];
 //     console.log(arr);
 //     i++;
 // }
+
+// let i = array.length -1;
+// while (i >= 0 ){
+//     let arr = array[i];
+//     console.log(arr)
+//     i--;
+// }
+
 //     2. перебрати його циклом for
 
 // for (let i = 0; i < array.length; i++) {
 //     let arrayElement = array[i];
 //     console.log(arrayElement);
 // }
+
+// for (let i = array.length - 1; i >= 0; i--) {
+//     const arrayElement = array[i];
+//     console.log(arrayElement)
+// }
+
 // 3. перебрати циклом while та вивести  числа тільки з непарним індексом
 
 // let i = 0;
@@ -38,10 +64,26 @@ let array = [2,17,13,6,22,31,45,66,100,-18];
 //     i++;
 // }
 
+// let i = array.length - 1;
+// while (i >= 0){
+//     let arr = array[i];
+//     if (arr % 2 !== 0){
+//         console.log(arr)
+//     }
+//     i--;
+// }
+
 // 4. перебрати циклом for та вивести  числа тільки з непарним індексом
 
 // for (let j = 0; j < array.length; j++) {
 //     const arrayElement = array[j];
+//     if (arrayElement % 2 !== 0){
+//         console.log(arrayElement)
+//     }
+// }
+
+// for (let i = array.length - 1; i >= 0; i--) {
+//     const arrayElement = array[i];
 //     if (arrayElement % 2 !== 0){
 //         console.log(arrayElement)
 //     }
@@ -57,10 +99,27 @@ let array = [2,17,13,6,22,31,45,66,100,-18];
 //     }
 //     i++;
 // }
+
+// let i = array.length -1;
+// while (i >= 0){
+//     let arr = array[i];
+//     if (arr % 2 === 0){
+//         console.log(arr)
+//     }
+//     i--;
+// }
+
 // 6. перебрати циклом for та вивести  числа тільки парні  значення
 
 // for (let j = 0; j < array.length; j++) {
 //     const arrayElement = array[j];
+//     if (arrayElement % 2 === 0){
+//         console.log(arrayElement)
+//     }
+// }
+
+// for (let i = array.length - 1; i >= 0; i--) {
+//     const arrayElement = array[i];
 //     if (arrayElement % 2 === 0){
 //         console.log(arrayElement)
 //     }
@@ -71,8 +130,14 @@ let array = [2,17,13,6,22,31,45,66,100,-18];
 // for (let j = 0; j < array.length; j++) {
 //     const arrayElement = array[j];
 //     if (arrayElement % 3 === 0){
-//         console.log(array.arrayElement='okten');
-//         console.log(arrayElement)
+//         console.log(j, array.arrayElement=['okten']);
+//     }
+// }
+
+// for (let i = array.length - 1; i >= 0; i--) {
+//     const arrayElement = array[i];
+//     if (arrayElement % 3 === 0){
+//         console.log(i, array.arrayElement=['okten']);
 //     }
 // }
 

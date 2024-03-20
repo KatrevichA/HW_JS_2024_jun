@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<!--       Стоврити форму з трьома полями для name,sruname,age та кнопкою. -->
+<!--       При натисканні на кнопку зчитати данні з полів,та вивести об'єкт в документ. -->
+<!--       Іншими словами : заповниои форму, натиснули кнопку, -->
+<!--       під формою з'явився блок з вашим об'єктом.-->
+
+<form action="#" name="formName">
+    First Name: <br>
+    <input type="text" name="name" id="name" placeholder="Name">
+    <br>
+    Surname: <br>
+    <input type="text" name="surname" id="surname" placeholder="Surname">
+    <br>
+    Your Age: <br>
+    <input type="number" name="age" id="ege" placeholder="Age">
+    <br>
+    Are you Sure! <br>
+    <button>Send</button>
+</form>
+
+
+
+
+<script>
+
+    console.log(document.forms);
+
+    const form = document.forms ['formName'];
+    console.log(form);
+
+    form.onsubmit = function (event) {
+        event.preventDefault();
+
+        const divForm = document.createElement('div');
+        divForm.style.cssText = `height: 200px; width: 300px; border: 1px solid black; margin: 5px;`
+
+        let h1name = document.createElement('h1');
+        let h1surname = document.createElement('h1');
+        let h2age = document.createElement('h2');
+
+        h1name.innerText = `Name: ${this.name.value}`;
+        h1surname.innerText = `Surname: ${this.surname.value}`;
+        h2age.innerText = `Age: ${this.ege.value}`;
+
+        divForm.append(h1name, h1surname, h2age);
+
+        this.name.value = '';
+        this.surname.value = '';
+        this.age.value  = '';
+
+        document.body.appendChild(divForm);
+    }
+
+</script>
+
+
+</body>
+</html>
+

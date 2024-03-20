@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div>Number Reloads: <span id="number"></span></div>
+
+<!--є сторінка, на якій є блок, я кому знаходиьтся цифра.
+    написати код, який при кожному перезавантажені сторінки буде додавати до неї +1-->
+
+
+<script>
+
+let reload = localStorage.getItem('reloads') || 0;
+
+let span = document.getElementById('number');
+
+let number = (+reload + 1).toString();
+console.log(number);
+
+span.innerText = number;
+
+localStorage.setItem('reloads', number);
+
+</script>
+
+</body>
+</html>

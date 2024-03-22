@@ -62,7 +62,12 @@ form.onsubmit = function (e) {
             tr.appendChild(td);
         }
         table.appendChild(tr)
+
     }
+
+    this.rows.value = '';
+    this.columns.value = '';
+    this.text.value  = '';
 
     document.body.appendChild(table);
 }

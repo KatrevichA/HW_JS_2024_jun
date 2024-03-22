@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<!-- - взяти https://dummyjson.com/docs/recipes та вивести інформацію про всі рецепти.
+       Інгредієнти повинні бути список під час відображення.-->
+
+<button id = "next">Next</button>
+<button id = "back">Back</button>
+
+<div class="divRecipe"></div>
+
+<script>
+
+    function showRecipes (limit, skip){
+
+        fetch(`https://dummyjson.com/recipes?limit=${limit}&skip=${skip}`)
+            .then(res => res.json())
+            .then(value => {
+
+                let {recipes} = value;
+                console.log(recipes);
+
+                let divRecipe = document.getElementsByClassName('divRecipe')[0];
+                divRecipe.innerHTML = '';
+
+
+
+                for (const recipe of recipes) {
+                    console.log(recipe);
+
+                    let ul = document.createElement('ul');
+                    divRecipe.appendChild(ul);
+
+                    let h2 = document.createElement('h2');
+                    h2.innerText = `${recipe.id} - ${recipe.name}`;
+                    ul.appendChild(h2);
+
+                    let ingredients = recipe.ingredients;
+                    for (const ingredient of ingredients) {
+
+                        let li = document.createElement('li');
+                        li.innerText = ingredient;
+
+                        ul.appendChild(li);
+                    }
+
+                    let pl = document.createElement('p');
+                    pl.innerText = `Preparation Instruction : `
+                    ul.appendChild(pl);
+
+                    let instructions = recipe.instructions;
+                    for (const instruction of instructions) {
+
+                        let p = document.createElement('p');
+                        p.innerText = ` -  ${instruction}`;
+
+                        pl.appendChild(p);
+
+                    }
+
+                }
+
+
+            });
+
+    }
+
+    let lim = 1;
+    let skp = 0;
+    document.getElementById('next').onclick = function () {
+        showRecipes(lim, skp);
+        skp += lim;
+    }
+
+
+    document.getElementById('back').onclick = function () {
+        showRecipes(lim, skp);
+        skp -= lim;
+    }
+
+
+
+</script>
+
+</body>
+</html>

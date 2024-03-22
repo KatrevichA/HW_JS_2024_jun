@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<!-- -   Dзвзяти https://dummyjson.com/docs/carts та вивести інформацію про всі корзини.
+         Відобразити всі поля кожної корзини.-->
+
+<script>
+
+    fetch('https://dummyjson.com/carts')
+        .then(res => res.json())
+        .then(value => {
+
+            let {carts} = value;
+            console.log(carts);
+
+            for (const cart of carts) {
+                let products = cart.products;
+                console.log(products);
+
+                let div = document.createElement('div');
+                div.style.cssText = `width: 100%;
+                margin: 5px;
+                border: 1px solid black;
+                display: flex;
+                justify-content: center;
+                align-items: center;`
+                document.body.appendChild(div);
+
+                for (const {title, price, thumbnail} of products) {
+                    console.log();
+
+                    let bloc = document.createElement('div');
+                    bloc.style.cssText = `width: 150px; border: 2px solid black; margin: 5px; text-align: center;`;
+                    let h3 = document.createElement('h3');
+                    h3.innerText = title;
+                    let p = document.createElement('p');
+                    p.innerText = `Prise : ${price}`
+                    let img = document.createElement('img')
+                    img.style.cssText = `width: 100px;`;
+                    img.src = thumbnail;
+
+
+                    bloc.append(h3, p, img);
+                    div.appendChild(bloc);
+
+                }
+
+            }
+
+        });
+
+</script>
+</body>
+</html>

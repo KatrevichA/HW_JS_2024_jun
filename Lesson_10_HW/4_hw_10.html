@@ -718,7 +718,7 @@
     console.log(locations);
 
     let start = 0;
-    let step = 5;
+    let step = 2;
     let limit = start + step;
 
     let fIteration = function () {
@@ -743,55 +743,29 @@
 
             document.body.appendChild(div);
         }
-        start = limit;
-        limit = limit + step;
+
     }
 
     // fIteration();
 
     let prevButton = document.getElementById('prev');
-    prevButton.addEventListener('click', () => fIteration ());
+    prevButton.addEventListener('click', () =>  {
+        fIteration ();
+
+
+
+        start = limit;
+        limit = limit + step;
+
+    });
 
     let nextButton = document.getElementById('next');
-    nextButton.addEventListener('click', () => fIteration ())
+    nextButton.addEventListener('click', () => {
+        fIteration ();
 
-
-
-    // prevButton.onclick = function () {
-    //
-    //     for (let i = start; i < limit; i++) {
-    //         if (i < locations.length){
-    //             console.log (i);
-    //
-    //             let div = document.createElement('div');
-    //                 div.style.cssText = `height: 80px; width: 300px; border: 1px solid black; margin: 2px;`;
-    //
-    //                 let h3 = document.createElement('h3')
-    //                 h3.innerText = ` ${i} Назва: ${locations[i].title}`;
-    //                 let p = document.createElement('p');
-    //                 p.innerText = `Тип: ${locations[i].type}`;
-    //
-    //                 div.append(h3, p);
-    //
-    //                 document.body.appendChild(div);
-    //         }
-    //     }
-    //     start = limit;
-    //     limit = limit + step;
-    // }
-
-    
-
-
-    // nextButton.onclick = function () {
-    //     for (let i = limit; i >= start; i--) {
-    //         if (i > locations.length){
-    //             console.log(i);
-    //         }
-    //     }
-    //     start = limit;
-    //     limit = limit - step;
-    // }
+        limit = start;
+        start = limit - step;
+    })
 
 
 

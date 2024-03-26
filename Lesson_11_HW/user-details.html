@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Users details</title>
+</head>
+<body>
+
+<h4><a href="3_hw_11(users.html).html">BECK</a></h4>
+
+
+<script>
+
+    let UserDetails
+
+    // fetch ('https://jsonplaceholder.typicode.com/users')
+    //     .then (res => res.json())
+    //     .then(console.log)
+
+    console.log(location);
+    let userId = new URL (location.href).searchParams.get('id')
+    console.log(userId);
+    let baseURL = 'https://jsonplaceholder.typicode.com/users/' + userId;
+
+    fetch(baseURL)
+    .then (res => res.json())
+        .then(value => {
+            console.log(value);
+
+            let divOll  = document.createElement('div');
+            document.body.appendChild(divOll)
+
+            for (usersKey in value){
+                // console.log(usersKey, value[usersKey]);
+
+
+                if (usersKey === 'address' || usersKey === 'company'){
+
+                    for (let key in value [usersKey]){
+
+                        let p = document.createElement('p');
+                        divOll.appendChild(p);
+                        p.innerText = `${key.toUpperCase()} - ${value [usersKey] [key]}`;
+
+                        if (key === 'geo') {
+                            for (let kus in value [usersKey] [key]) {
+                                let span = document.createElement('span')
+                                divOll.appendChild(span);
+                                span.innerText = `${kus}- ${value [usersKey] [key] [kus]} ;`
+                            }
+                        }
+
+                    }
+                } else {
+                    let h4 = document.createElement('h4');
+                    h4.innerText = `${usersKey.toUpperCase()} - ${value[usersKey]}`;
+
+                    divOll.append(h4);
+                }
+
+            }
+
+        })
+
+
+
+</script>
+
+</body>
+</html>

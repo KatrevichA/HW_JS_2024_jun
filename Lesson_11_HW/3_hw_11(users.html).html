@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        .box {
+            width: 300px;
+            height: 400px;
+        }
+
+        .aHref {
+            margin: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+<!--- зробити файл users.html
+      з ендпоінту http://jsonplaceholder.typicode.com/users отримати всіх користувачів
+    - вивести їх id + name списком та додати посилання з href = user-details.html?id=XXX (замість ХХХ - айді юзера)
+      при кліку на посилання перехід на відповідну сторінку, на якій буде вся інформація про користувача (всі 15 полів)
+      отримана через додатковий запит (https://jsonplaceholder.typicode.com/users/XXX   де ХХХ - айді користувача)-->
+
+
+<div class="box"></div>
+
+<script>
+
+    const URL = 'http://jsonplaceholder.typicode.com/users';
+
+    function getUrl (url) {
+        fetch(url)
+            .then(res => res.json())
+            .then(value => {
+                console.log(value);
+
+                createIdName(value);
+            });
+
+    }
+    getUrl(URL);
+
+    function createIdName (objects) {
+        let box = document.getElementsByClassName('box')[0];
+        box.innerHTML  = '';
+
+        for (const object of objects) {
+            let div = document.createElement('div');
+            div.classList.add('aHref');
+            let a = document.createElement('a');
+            a.innerText = `${object.id}. ${object.name}`;
+            a.setAttribute("href", 'user-details.html?id=' + object.id)
+
+            // a.addEventListener('click', () => {
+            //     location.href = 'user-details.html?id=' + object.id;
+            // })
+
+            console.log(a)
+
+            div.appendChild(a);
+
+            box.appendChild(div);
+        }
+    }
+
+
+</script>
+
+</body>
+</html>
